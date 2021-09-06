@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a = Math.floor(Math.random()*20) - 9;
+    var b = Math.floor(Math.random()*20) - 9;
+
+    if (a >= 0 && b >= 0) {
+        alert("Число a: " + a + "\nЧисло b: " + b + "\nРазность чисел: " + (Math.max(a,b) - Math.min(a,b)));
+    } else if (a < 0 && b < 0) {
+        alert("Число a: " + a + "\nЧисло b: " + b + "\nПроизведение чисел: " + a * b);
+    } else {
+        alert("Число a: " + a + "\nЧисло b: " + b + "\nСумма чисел: " + (a + b));
+    }
+
+</script>
+</body>
+</html>
