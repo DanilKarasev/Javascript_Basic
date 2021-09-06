@@ -9,8 +9,16 @@
 </head>
 <body>
 <script>
-    var a = Math.floor(Math.random()*20) - 9;
-    var b = Math.floor(Math.random()*20) - 9;
+    do {
+        var min = +prompt("Введите минимальное значение диапазона двух чисел (обязательно отрицательное): ");
+        if (min > 0) {
+            alert("Число должно быть отрицательным!")
+        }
+    } while (min > 0);
+
+    var max = +prompt("Введите максимальное значение диапазона двух чисел: ");
+    var a = Math.floor(Math.random() * (max - min + 1)) + min;
+    var b = Math.floor(Math.random() * (max - min + 1)) + min;
 
     if (a >= 0 && b >= 0) {
         alert("Число a: " + a + "\nЧисло b: " + b + "\nРазность чисел: " + (Math.max(a,b) - Math.min(a,b)));
