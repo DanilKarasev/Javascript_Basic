@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//    function sum(a, b) {
+//        var res = a+ b;
+//        alert(res);
+//    }
+//
+//    sum(2, 3);
+
+//    var outer = 2;
+//    function sum(a,b) {
+//        alert(a + b);
+//        return a + b + outer; //завершает работу ф-ии и присваивает ей значение
+//    }
+//
+//    var res = 2 * sum(2,3);
+//    alert(res);
+
+    function calc(a,b) {
+        if (isEven(a) && isEven(b)) {
+            return a+ b;
+        }
+        return a * b;
+    }
+
+    function isEven(n){
+        return n % 2 ==0;
+ //       if (n % 2 == 0) {
+ //           return true;
+ //       }
+ //       return false;
+    }
+
+    alert(calc(4, 6));
+
+</script>
+</body>
+</html>

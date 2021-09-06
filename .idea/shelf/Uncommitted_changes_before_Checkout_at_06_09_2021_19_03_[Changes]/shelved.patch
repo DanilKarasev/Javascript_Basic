@@ -1,0 +1,13 @@
+Index: Celsium-fahrenheit.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>alert(\"Конвертер температур Цельсий - Фаренгейт\");\r\nvar cels = +prompt(\"Введите температуру в градусах Цельсия\");\r\nvar fahr = (9 / 5) * cels + 32;\r\nalert(cels + \" по Цельсию это \" + fahr.toFixed(2) + \" по Фаренгейту\");\r\n
+===================================================================
+diff --git a/Celsium-fahrenheit.js b/Celsium-fahrenheit.js
+--- a/Celsium-fahrenheit.js	
++++ b/Celsium-fahrenheit.js	
+@@ -2,3 +2,4 @@
+ var cels = +prompt("Введите температуру в градусах Цельсия");
+ var fahr = (9 / 5) * cels + 32;
+ alert(cels + " по Цельсию это " + fahr.toFixed(2) + " по Фаренгейту");
++
