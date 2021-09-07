@@ -40,3 +40,19 @@ function task_4() {
 
     }
 }
+
+function task_4_recurse() {
+    do {
+        var a = +prompt("Введите число от 0 до 15");
+    } while (a < 0 || a > 15 || isNaN(a));
+
+    function showNumbers(a){
+        if (a == 16) {
+            return 16;
+        }
+        document.write(a + " ");
+        showNumbers(++a);
+    }
+    showNumbers(a);
+
+}
