@@ -1,22 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<script>
+function task_3() {
+
     do {
         var min = +prompt("Введите минимальное значение диапазона двух чисел (обязательно отрицательное): ");
         if (min > 0) {
             alert("Число должно быть отрицательным!")
+        } else if (isNaN(min)) {
+            alert("Неверный ввод");
         }
-    } while (min > 0);
+    } while (min >= 0 || isNaN(min));
 
-    var max = +prompt("Введите максимальное значение диапазона двух чисел: ");
+    do {
+        var max = +prompt("Введите максимальное значение диапазона двух чисел(обязательно положительное): ");
+        if (max < 0) {
+            alert("Число должно быть положительным!")
+        } else if (isNaN(max))  {
+            alert("Неверный ввод");
+        }
+    } while (max < 0 || isNaN(max));
+
+
     var a = Math.floor(Math.random() * (max - min + 1)) + min;
     var b = Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -27,7 +29,4 @@
     } else {
         alert("Число a: " + a + "\nЧисло b: " + b + "\nСумма чисел: " + (a + b));
     }
-
-</script>
-</body>
-</html>
+}
