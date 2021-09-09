@@ -14,7 +14,27 @@
 
 .item
   width: 100%
-  min-height: 150px
+
   border: 2px solid white
   border-radius: 10px
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__child
+    display: flex
+  p
+    margin-left: 20px
+    margin-top: 10px
+    text-align: left
+
+  .btn
+    padding: 10px 30px
+    margin: 20px 10px
+    border-radius: 10px
+    background-color: darkblue
+    color: #fff
+    transition: all 0.3s ease
+    &:hover
+      background-color: darkcyan
+
 

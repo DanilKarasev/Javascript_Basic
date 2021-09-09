@@ -10,13 +10,29 @@
   flex-direction: column;
   gap: 20px;
   padding: 0 50px;
-  text-align: center;
-  }
+  text-align: center; }
 
 .item {
   width: 100%;
-  min-height: 150px;
   border: 2px solid white;
-  border-radius: 10px; }
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .item__child {
+    display: flex; }
+  .item p {
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: left; }
+  .item .btn {
+    padding: 10px 30px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    background-color: darkblue;
+    color: #fff;
+    transition: all 0.3s ease; }
+    .item .btn:hover {
+      background-color: darkcyan; }
 
 /*# sourceMappingURL=styles.css.map */
