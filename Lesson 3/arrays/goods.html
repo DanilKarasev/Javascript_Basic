@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Goods</title>
+</head>
+<body>
+<script>
+    var goods = [
+        {
+            title: 'Товар 1',
+            price: 100
+        },
+        {
+            title: 'Товар 2',
+            price: 200
+        },
+        {
+            title: 'Товар 3',
+            price: 300
+        },
+    ];
+
+    var basketPrice = 0;
+    for (var item of goods){
+        basketPrice += item.price;
+        document.write(item.title + ' стоит ' + item.price + " рублей " + "<br>");
+    }
+    document.write("<br>Стоимость корзины: " + basketPrice + " рублей");
+</script>
+</body>
+</html>

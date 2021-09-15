@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,"test",true];
+//  console.log(arr);
+//  alert(arr.length);
+//  alert(arr[arr.length - 1]);
+//
+//  Удаление элементов из массива
+
+//  var deleted = arr.pop(); // удаление последнего элемента
+//  alert("Вы удалили элемент " + deleted + "\nВ массиве остались элементы " + arr);
+
+//  alert(arr.splice(2,3)); //удаляем со второго идекса 3 элемента и воздвращает удаленный массив
+
+    // Добавление элементов в массив
+
+//    arr.push("777"); //Добавление в конец
+//    arr[arr.length] = 10 //Так же в конец
+//    alert(arr)
+//    arr[1] = 20;
+//    alert(arr)
+
+    //Преобразование строки в массив
+
+    var fio = "Иванов Иван Иванович";
+    var x = (fio.split(" "));
+//    alert(x[0]);
+
+//    var fioAfterParse = x.join('\n');
+//    alert(fioAfterParse);
+
+    var arr2 =[];
+    for (var i = 0; i < arr.length; i++){
+        if (i <= 2 && i >= 4){
+            arr2.push(arr[i]);
+        }
+    }
+    console.log(arr2);
+
+
+</script>
+</body>
+</html>
