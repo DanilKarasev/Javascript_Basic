@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car 2</title>
+</head>
+<body>
+<script>
+    //Функция конструктор - функция на основе которой создается объект, то есть эта функция генерирует свойства объекта
+
+    function Car(title, price, year) {
+        this.title = title;
+        this.price = price;
+        this.year = year;
+        this.show = function (){
+            console.log('Стоимость ' + this.title + ' равна ' + this.price);
+        }
+    }
+
+    //Поиск максимальной цены авто
+
+    function getMaxPrice(mas) {
+        var max = mas[0];
+        for (var i = 1; i < mas.length; i++) {
+            if (mas[i].price > max.price) {
+                max = mas[i];
+            }
+        }
+        return max;
+    }
+
+    var car1 = new Car("Ауди", 1000, 2021);
+    var car2 = new Car("BMW", 1400, 2012);
+    var car3 = new Car("Opel", 900, 2015);
+
+    var cars = [car1, car2, car3];
+
+    cars.push(new Car("Shkoda", 500, 1999));
+
+    for (var car of cars) {
+        car.show();
+    }
+
+    var carWithMaxPrice = getMaxPrice(cars);
+    document.write('Больше всех стоит ' + carWithMaxPrice.title);
+</script>
+</body>
+</html>

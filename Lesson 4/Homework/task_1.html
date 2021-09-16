@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+<script>
+    do {
+        var number = +prompt('Введите число от 1 до 999');
+    } while (number <= 1 || number >= 999 || isNaN(number));
+
+    number = String(number);
+    numberLength = number.length;
+
+    var object = {};
+
+    function findValue(n) {
+        switch (numberLength){
+            case 3:
+                object.hundreds = n[0];
+                object.tens = n[1];
+                object.ones = n[2];
+                alert('Сотни: ' + object.hundreds + '\nДесятки: ' + object.tens + '\nЕдиницы: ' + object.ones);
+                break;
+            case 2:
+                object.tens = n[0];
+                object.ones = n[1];
+                alert('\nДесятки: ' + object.tens + '\nЕдиницы: ' + object.ones);
+                break;
+            default:
+                object.ones = n;
+                alert('\nЕдиницы: ' + object.ones);
+
+        }
+
+    }
+
+    findValue(number);
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кто хочет стать миллионером</title>
+</head>
+<body>
+<script>
+  //Object constructor
+
+  function Question(questionText, answ1, answ2, answ3, answ4, correctAnsw) {
+      this.questionText = questionText;
+      this.answ1 = answ1;
+      this.answ2 = answ2;
+      this.answ3 = answ3;
+      this.answ4 = answ4;
+      this.correctAnsw = correctAnsw;
+  }
+
+  var question1 = new Question(
+      "Чему приблизительно равна скорость света?", "\n1: 300 000 м/с", "\n2: 900 000 км/ч",
+      "\n3: 300 000 км/с", "\n4: 200 000 000 м/с", 3);
+  var question2 = new Question(
+      "Расстояние от земли до солнца?", "\n1: 150 млн км", "\n2: 800 000 км",
+      "\n3: 500 млн км", "\n4: 1 световой год", 1);
+  var question3 = new Question(
+      "Что такое горизонт событий?", "\n1: Орбита черной дыры", "\n2: Поверхность черной дыры",
+      "\n3: Условная граница, за которой никакие события происходить не могут", "\n4: Граница галактики", 3);
+  var question4 = new Question(
+      "Предположим, вы наблюдаете как некий человек приближается к горизонту событий черной дыры. Что, с вашей точки зрения, с ним произойдет при максимальном сближении?",
+      "\n1: Его испепелит излучение Хоккинга", "\n2: Ничего, он замрет на месте",
+      "\n3: Его засосет внутрь черной дыры", "\n4: Он станет вращаться по орбите вокруг черной дыры", 2);
+  var question5 = new Question(
+      "Что произойдет с любой информацией, попавшей внутрь черной дыры?", "\n1: Она будет храниться внутри", "\n2: Уничтожится",
+      "\n3: Информация не может попасть внутрь", "\n4: Науке пока не известен ответ на этот вопрос", 4);
+
+  var questions = [question1, question2, question3, question4, question5];
+
+  var userAnswer;
+
+  for (var questionNubmer = 0; questionNubmer < questions.length; questionNubmer++) {
+      userAnswer = +prompt('Вопрос № ' + (questionNubmer + 1) + '\n' + questions[questionNubmer].questionText +
+          '\nВарианты ответов:' + questions[questionNubmer].answ1 + questions[questionNubmer].answ2 + questions[questionNubmer].answ3
+          + questions[questionNubmer].answ4 + '\nВведите номер правильного ответа' +
+          '\nДля выхода из игры введите 0');
+      if (userAnswer == 0) {
+          alert('Спасибо за игру, до скорого!');
+          break;
+      } else if (userAnswer == questions[questionNubmer].correctAnsw) {
+          alert('Это правильный ответ!');
+          continue;
+      } else {
+          alert('Ответ неверный. Вы проиграли.');
+          break;
+      }
+  }
+
+
+
+//  alert(var answer = +prompt("Дайте ответ на вопрос (введите 1, 2, 3, 4 для ответа или 0 для выхода из игры):\n"
+//      + question1.questionText + question1.answ1 + question1.answ2 + question1.answ3 + question1.answ4))
+</script>
+</body>
+</html>
