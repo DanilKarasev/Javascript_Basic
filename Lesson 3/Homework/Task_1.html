@@ -12,9 +12,10 @@
     while (i < 100) {
         i++;
         var j = 2;
-        while (j < i){
-            if (i % j == 0)
+        while (j <= i / 2){
+            if (i % j == 0) {
                 continue nextPrime;
+            }
             j++;
         }
         document.write( i + " ");
