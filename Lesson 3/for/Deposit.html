@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+</head>
+<body>
+<script>
+  function deposit(money, years) {
+      var rate = years > 3 ? 6 : 5;
+      for(var i = 1; i <= years; i++){
+          var profit = money * rate / 100;
+          money += profit;
+          document.write("<h2>Доход за " + i + " год = " + profit.toFixed(2) + ", сумма = " + money.toFixed(2) + "</h2>");
+      }
+  }
+
+  var sum = +prompt("Ваша сумма?");
+  var term = +prompt("Срок вклада?");
+
+  deposit(sum, term)
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2&3</title>
+</head>
+<body>
+<script>
+    function getNumber(min, max){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+    }
+
+    var goods = [
+        {
+            title: 'Товар 1',
+            price: getNumber(1, 5) * 100,
+            count: getNumber(1, 5)
+        },
+        {
+            title: 'Товар 2',
+            price: getNumber(1, 5) * 100,
+            count: getNumber(1, 5)
+        },
+        {
+            title: 'Товар 3',
+            price: getNumber(1, 5) * 100,
+            count: getNumber(1, 5)
+        },
+    ];
+
+    function countBasketPrice(goods){
+        var basketPrice = 0;
+        for (var item of goods){
+            basketPrice += item.price * item.count;
+            document.write(item.title + ' стоит ' + item.price + " рублей " + " Количество: " + item.count + "<br>");
+        }
+        return basketPrice;
+    }
+
+
+    document.write("<br>Стоимость корзины: " + countBasketPrice(goods) + " рублей");
+</script>
+</body>
+</html>

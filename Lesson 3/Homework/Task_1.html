@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+<script>
+    var i = 2;
+
+    nextPrime: // метка чтобы ссылаться в continue, подсмотрел в интернете, иначе не знаю как зациклить на начало.
+    while (i < 100) {
+        i++;
+        var j = 2;
+        while (j <= i / 2){
+            if (i % j == 0) {
+                continue nextPrime;
+            }
+            j++;
+        }
+        document.write( i + " ");
+    }
+</script>
+</body>
+</html>
