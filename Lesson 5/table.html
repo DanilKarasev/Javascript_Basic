@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+<body>
+<style>
+    table, td {
+        border: 1px solid black;
+    }
+</style>
+    <div></div>
+
+    <script>
+        var table = document.createElement("table"), tr, td;
+        for (var i = 1; i < 10; i++) {
+            tr = document.createElement("tr");
+            table.append(tr);
+            for (var j = 1; j <= 10; j++) {
+                td = document.createElement("td");
+                td.innerHTML = "<h2>" + (i * j) + "</h2>";
+                tr.append(td);
+            }
+        }
+
+        document.querySelector("div").append(table);
+    </script>
+</body>
+</html>

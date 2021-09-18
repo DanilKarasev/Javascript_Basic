@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="block">
+        <h1 id="header">Заголовок</h1>
+    </div>
+
+    <script>
+//        var header = document.getElementById("header");
+//        header.innerText = "Заголовочек";
+//
+        var block = document.querySelector('#block');
+//        block.innerHTML += "<h2>ЗАГОЛОВКА</h2>";
+
+        block.insertAdjacentHTML("beforebegin", "Тестовый элемент");
+
+//        for (var i = 1; i <= 10; i++) {
+//            block.innerHTML += "Заголовок № " + i + "<hr>";
+//        }
+
+        for (var i = 1; i <= 10; i++) {
+            block.insertAdjacentHTML("beforeend", "Тест в цикле<br>");
+        }
+    </script>
+</body>
+</html>
