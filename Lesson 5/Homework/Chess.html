@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChessBoard</title>
+</head>
+<body>
+<style>
+    .main {
+        width: 700px;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .chess {
+        width: 100%;
+        height: 100%;
+    }
+    .child {
+        width: 70px;
+        height: 70px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    .markup {
+        width: 70px;
+        height: 70px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .white {
+        background-color: #f0d9b5;
+    }
+    .black {
+        background-color: #b58863;
+    }
+    .chess-box {
+        display: flex;
+    }
+    .letters {
+        background-color: #f0d9b5;
+        font-size: 24px;
+    }
+    .numbers {
+        background-color: #f0d9b5;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+    .reverse {
+        transform: rotate(180deg);
+    }
+
+
+</style>
+<div class="main">
+    <div class="letters">
+    </div>
+    <div class="chess-box">
+        <div class="numbers"></div>
+        <div class="chess"></div>
+        <div class="numbers"></div>
+    </div>
+    <div class="letters">
+    </div>
+</div>
+<script>
+    function chessBoard(){
+        //Чтобы доска рисовалась корректно - сначала нарисуем разметочные поля, которые ограничат саму доску
+        //В принципе доска и так в итоге будет отрисована корректно, но алгоритм сначала заполнит все пространство и потом ограничит его полями. Отрисовать поля в начале - быстрее.
+        var lettersMarkup = document.querySelectorAll(".letters");
+        var numbersMarkup = document.querySelectorAll(".numbers");
+        var letters = ["", "a", "b", "c", "d", "e", "f", "g", "h", ""];
+        var numbers = ["1", "2", "3", "4", "5", "6", "7", "8"];
+
+        for (i=0; i<10; i++){
+            lettersMarkup[0].innerHTML += "<div class='markup'>" + letters[i] + "</div>";
+            lettersMarkup[0].classList.add('reverse');
+            lettersMarkup[1].innerHTML += "<div class='markup'>" + letters[i] + "</div>";
+        }
+        for (i=0; i<8; i++){
+            numbersMarkup[0].innerHTML += "<div class='markup'>" + numbers[i] + "</div>";
+            numbersMarkup[1].classList.add('reverse');
+            numbersMarkup[1].innerHTML += "<div class='markup'>" + numbers[i] + "</div>";
+        }
+
+
+        var chess = document.querySelector(".chess");
+        var counter = 0;
+
+        //рисуем саму доску
+        for (i=0; i<8; i++) {
+            for (j=0; j<8; j++) {
+                if (counter % 2  == 0) {
+                    chess.innerHTML += "<div class='child white'></div>"
+                }
+                else {
+                    chess.innerHTML += "<div class='child black'></div>"
+                }
+                counter++;
+            }
+            counter++;
+        }
+
+        //Теперь заполняем доску фигурами
+        var child = document.querySelectorAll(".child");
+
+        var blackPieces = ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜", "♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"];
+        var whitePieces = ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙", "♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"];
+
+        function piecesFill(start, end, typeOfPieces) { //Функция заполнения с параметрами стартового номера клетки, конечного и типа массива фигур
+            for (i=start; i < end; i++) {
+                child[i].innerText += typeOfPieces[i - start];
+            }
+        }
+
+        piecesFill(0, 16, blackPieces);
+        piecesFill(48, 64, whitePieces);
+
+    }
+    chessBoard();
+
+</script>
+</body>
+</html>
