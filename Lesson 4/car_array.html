@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car array</title>
+</head>
+<body>
+<script>
+    var car = {
+      title: "Audi",
+      price: 1000,
+      color: "white",
+      isEngineStarted: false,
+      show: function (){
+        console.log('Автомобиль ' + this.title + ' стоит ' + this.price);
+      }
+    }
+    var car2 = {
+      title: "BMW",
+      price: 1200,
+      color: "black",
+      isEngineStarted: false
+    }
+
+    var cars = [car,car2];
+      for (var item of cars){
+          item.show = function (){
+              console.log('Автомобиль ' + this.title + ' стоит ' + this.price);
+          }
+          item.show();
+      }
+
+
+
+</script>
+</body>
+</html>

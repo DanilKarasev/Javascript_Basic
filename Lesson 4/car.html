@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script>
+  var car = {
+      title: "Audi",
+      price: 1000,
+      color: "white",
+      isEngineStarted: false,
+      show: function (){
+          console.log('Автомобиль ' + this.title + ' стоит ' + this.price);
+      }
+  }
+
+  car.show();
+
+  var car2 = {
+    title: "BMW",
+    price: 1200,
+    color: "black",
+    isEngineStarted: false
+  }
+
+  car2.show = car.show;
+  car2.show();
+
+//  car.year = 2021;
+//  console.log(car)
+  car.start = startEngine;
+  car2.start = startEngine;
+
+  function startEngine() {
+    if (!this.isEngineStarted) {
+        this.isEngineStarted = true;
+      console.log('Автомобиль ' + this.title + ' запущен!');
+    }
+  }
+
+  car.stop = function () {
+      if (this.isEngineStarted) {
+          this.isEngineStarted = false;
+          console.log('Автомобиль ' + this.title + ' заглушен!');
+      }
+  }
+
+  car2.stop = car.stop;
+
+//  function startEngine(){
+//    console.log(this); //this - ссылка на объект, который запускает функцию
+//  }
+
+  car.start();
+  car2.start();
+  car.stop();
+  car2.stop();
+</script>
+</body>
+</html>
