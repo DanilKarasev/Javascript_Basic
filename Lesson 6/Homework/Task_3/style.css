@@ -39,8 +39,8 @@
   transition: all 0.3s ease; }
   .carousel-control-prev:hover,
   .carousel-control-next:hover {
-    background: #c4c4c4;
-    cursor: pointer; }
+    cursor: pointer;
+    background: #c4c4c4; }
   .carousel-control-prev:hover .carousel-control-prev-icon,
   .carousel-control-next:hover .carousel-control-prev-icon {
     background-image: url(prev-active.png); }
@@ -68,5 +68,18 @@
 
 .carousel-control-next-icon {
   background-image: url(next-unactive.png); }
+
+.mini-container {
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex; }
+
+.mini_image {
+  width: 100%;
+  height: 100%; }
+  .mini_image_active {
+    box-sizing: border-box;
+    border: 5px solid red; }
 
 /*# sourceMappingURL=style.css.map */

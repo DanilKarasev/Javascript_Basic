@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Events</title>
 </head>
 <script src="script.js"></script>
+
 <body>
-<style>
-    .red{
-        color: red;
-    }
-    .hide {
-        display: none;
-    }
-</style>
-
-<button id="b1">Кнопка 1</button>
-<button id="b2">Кнопка 2</button>
-<button id="b3">Кнопка 3</button>
-<button onclick="alert('Click on B4')" id="b4">Кнопка 4</button>
-<button onclick="document.getElementById('b4').click()" id="b5">Кнопка 5</button>
-
-<a href="#">Link 1</a>
-<a href="#">Link 2</a>
-<a href="#">Link 3</a>
-
-<script>
-    var links = document.querySelectorAll('a');
-    var buttons = document.querySelectorAll('button');
-
-    for (var link of links) {
-        link.onclick = f; // Функция без скобок, чтобы не запускалась сразу
-    }
-
-    //если функция запускается по событию, то у нее всегда первый параметр это глобальный объект event. Название параметра произвольно. Самое важное свойство этого объекта = .target
-    function f(e) {
-        switch (e.target){//e.target - источник события
-            case links[0]: document.getElementById('b1').classList.add('red');
-            break;
-            case links[1]:
-                for (var i = 2; i < buttons.length; i++){
-                    buttons[i].remove();
-                }
-                break;
-            case links[2]:
-                for (var item of buttons) {
-                    item.style.color = getColor();
-                }
+    <style>
+        .red {
+            color: red;
         }
-//        console.log(e.target);
-//        console.log(this);
-    }
-    // for (var i = 0; i < 3; i++) {
-    //     buttons[i].onclick = function (e) {
-    //         var img = document.createElement("img");
-    //         img.src = "p" + (e.target.id[1] - 1) + ".png";
-    //         document.body.append(img);
-    //         img.onclick = function () {
-    //             this.classList.add("hide");
-    //         }
-    //     }
-    // }
-    function f1() {
-        console.log("Function f1 started!");
-    }
-    function f2(e) {
-        console.log("Function f2 started!");
-        e.target.removeEventListener("click", f2);
-    }
 
-    buttons[0].addEventListener("click", f1);
-    buttons[0].addEventListener("click", f2);
+        .hide {
+            display: none;
+        }
+    </style>
 
-</script>
+    <button id="b1">Кнопка 1</button>
+    <button id="b2">Кнопка 2</button>
+    <button id="b3">Кнопка 3</button>
+    <button onclick="alert('Click on B4')" id="b4">Кнопка 4</button>
+    <button onclick="document.getElementById('b4').click()" id="b5">Кнопка 5</button>
+
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+
+    <script>
+        var links = document.querySelectorAll('a');
+        var buttons = document.querySelectorAll('button');
+
+        for (var link of links) {
+            link.onclick = f; // Функция без скобок, чтобы не запускалась сразу
+        }
+
+        //если функция запускается по событию, то у нее всегда первый параметр это глобальный объект event. Название параметра произвольно. Самое важное свойство этого объекта = .target
+        function f(e) {
+            switch (e.target) {//e.target - источник события
+                case links[0]: document.getElementById('b1').classList.add('red');
+                    break;
+                case links[1]:
+                    for (var i = 2; i < buttons.length; i++) {
+                        buttons[i].remove();
+                    }
+                    break;
+                case links[2]:
+                    for (var item of buttons) {
+                        item.style.color = getColor();
+                    }
+            }
+            //        console.log(e.target);
+            //        console.log(this);
+        }
+        for (var i = 0; i < 3; i++) {
+            buttons[i].onclick = function (e) {
+                var img = document.createElement("img");
+                img.src = "p" + (e.target.id[1] - 1) + ".png";
+                document.body.append(img);
+                img.onclick = function () {
+                    this.classList.add("hide");
+                }
+            }
+        }
+        function f1() {
+            console.log("Function f1 started!");
+        }
+        function f2(e) {
+            console.log("Function f2 started!");
+            e.target.removeEventListener("click", f2);
+        }
+
+        buttons[0].addEventListener("click", f1);
+        buttons[0].addEventListener("click", f2);
+
+    </script>
 </body>
+
 </html>
