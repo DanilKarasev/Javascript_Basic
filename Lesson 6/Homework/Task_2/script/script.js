@@ -1,6 +1,7 @@
 var cart = document.getElementById('cart');
 var addToCart = document.getElementsByClassName('grid__image_btn');
 var totalPrice = 0;
+var clearCart = document.getElementById("clear_cart");
 
 for (var i = 0; i < addToCart.length; i++) {
     addToCart[i].onclick = function (event) {
@@ -13,13 +14,12 @@ for (var i = 0; i < addToCart.length; i++) {
         document.querySelector(".total_price").textContent = "Сумма заказа: " + totalPrice + " $";
     }
 }
-
-var clearCart = document.getElementById("clear_cart");
-var items = document.getElementsByTagName('li');
-
-clearCart.onclick = function (e) {//Пока что не могу придумать как удалить все элементы, хотя понимаю в чем проблема
-    for (var j = 0; j < items.length; j++){
-        items[j].remove();
+clearCart.onclick = function (e) {
+    var cartIsCleared = document.getElementById('cart');
+    while (cartIsCleared.firstChild) {
+        cartIsCleared.removeChild(cartIsCleared.firstChild);
+        totalPrice = 0;
+        document.querySelector(".total_price").textContent = "Сумма заказа: ";
     }
 }
 
